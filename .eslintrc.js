@@ -11,9 +11,14 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'standard'
   ],
+  settings: {
+    "import/resolver": {
+      typescript: {},
+    },
+  },
   parser: '@typescript-eslint/parser',
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -21,8 +26,16 @@ module.exports = {
     },
     ecmaVersion: 2018,
     project: './tsconfig.json',
-    sourceType: 'module'
+    tsconfigRootDir: "./",
+    sourceType: 'module',
   },
   rules: {
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline",
+  }]
   }
 }

@@ -1,9 +1,10 @@
 {
   "name": "handvas",
   "version": "0.0.1",
-  "description": "Hand drawing javascript canvas library",
+  "description": "Hand drawing on a javascript canvas",
   "source": "src/index.ts",
   "main": "build/main.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "module": "build/module.js",
   "types": "build/types.d.ts",
   "scripts": {
@@ -13,6 +14,7 @@
     "lint:fix": "eslint ./src --ext .ts --fix",
     "check": "tsc --noEmit",
     "watch": "parcel watch",
+    "start": "parcel example/index.html --dist-dir ./build",
     "build": "rm -rf ./build && parcel build --no-source-maps --dist-dir ./build"
   },
   "repository": {
@@ -22,6 +24,7 @@
   "keywords": [
     "hand",
     "drawings",
+    "drawing",
     "canvas",
     "library",
     "javascript"
@@ -32,6 +35,11 @@
     "url": "https://github.com/AlessandroCipolletti/Handvas/issues"
   },
   "homepage": "https://github.com/AlessandroCipolletti/Handvas#readme",
+  "dependencies": {
+    "@types/debounce": "^1.2.1",
+    "debounce": "^1.2.0",
+    "mobile-device-detect": "^0.4.3"
+  },
   "devDependencies": {
     "@parcel/packager-ts": "^2.8.3",
     "@parcel/transformer-typescript-types": "^2.8.3",
@@ -39,6 +47,7 @@
     "@typescript-eslint/parser": "^5.51.0",
     "eslint": "^8.33.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
